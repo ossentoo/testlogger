@@ -29,10 +29,6 @@ IConfiguration InitConfiguration()
 
     services.Configure<LoggerFilterOptions>(options => options.MinLevel = LogLevel.Debug);
 
-        // .AddLogging(builder => builder.AddSerilog(
-        //     new LoggerConfiguration()
-        //         .ReadFrom.Configuration(configuration)
-        //         .CreateLogger()))
     _serviceProvider = services.BuildServiceProvider();
 
     _logger = _serviceProvider.GetService<ILogger<Program>>();
